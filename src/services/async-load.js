@@ -19,8 +19,8 @@ class AsyncLoad {
   // attached to the global 'window' object.
   async loadWalletLib () {
     do {
-      if (typeof window !== 'undefined' && window.SlpWallet) {
-        this.BchWallet = window.SlpWallet
+      if (typeof window !== 'undefined' && window.XecWallet) {
+        this.BchWallet = window.XecWallet
 
         return this.BchWallet
       } else {
@@ -52,6 +52,9 @@ class AsyncLoad {
     await wallet.walletInfoPromise
     await wallet.initialize()
 
+    console.log(`Wallet Info: ${JSON.stringify(wallet.walletInfo, null, 2)}`)
+    console.log(`Wallet UTXOs: ${JSON.stringify(wallet.utxos.utxoStore, null, 2)}`)
+
     // Update the state of the wallet.
     updateBchWalletState(wallet.walletInfo)
 
@@ -69,6 +72,7 @@ class AsyncLoad {
   // Get the spot exchange rate for BCH in USD.
   async getUSDExchangeRate (wallet, updateBchWalletState) {
     const bchUsdPrice = await wallet.getUsd()
+    console.log('bchUsdPrice: ', bchUsdPrice)
 
     // Update the state of the wallet
     updateBchWalletState({ bchUsdPrice })
@@ -162,10 +166,7 @@ class AsyncLoad {
       console.log('Returning hard-coded list of servers.')
 
       const defaultOptions = [
-        { value: 'https://free-bch.fullstack.cash', label: 'https://free-bch.fullstack.cash' },
-        { value: 'https://bc01-ca-bch-consumer.fullstackcash.nl', label: 'https://bc01-ca-bch-consumer.fullstackcash.nl' },
-        { value: 'https://pdx01-usa-bch-consumer.fullstackcash.nl', label: 'https://pdx01-usa-bch-consumer.fullstackcash.nl' },
-        { value: 'https://wa-usa-bch-consumer.fullstackcash.nl', label: 'https://wa-usa-bch-consumer.fullstackcash.nl' }
+        { value: 'http://wa-usa-xec-consumer.fullstackcash.nl', label: 'http://wa-usa-xec-consumer.fullstackcash.nl' }
       ]
 
       return defaultOptions

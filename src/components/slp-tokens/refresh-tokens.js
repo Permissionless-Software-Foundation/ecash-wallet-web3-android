@@ -64,7 +64,10 @@ class RefreshTokenBalance extends React.Component {
       // Update the wallet UTXOs
       await wallet.initialize()
       const tokenList = await wallet.listTokens()
-      // console.log(`tokenList: ${JSON.stringify(tokenList, null, 2)}`)
+      console.log(`tokenList: ${JSON.stringify(tokenList, null, 2)}`)
+
+      const utxos = wallet.utxos.utxoStore
+      console.log(`utxos: ${JSON.stringify(utxos, null, 2)}`)
 
       // Copy tokens from old token state.
       for (let i = 0; i < tokenList.length; i++) {
