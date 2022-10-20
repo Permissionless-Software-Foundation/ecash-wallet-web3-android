@@ -53,9 +53,9 @@ class SweepWif extends React.Component {
             <Col>
               <p>
                 This View is used to 'sweep' a private key. This will transfer
-                any BCH or SLP tokens from a paper wallet to your web wallet.
-                Paper wallets are used to store BCH and tokens. You
-                can <a href='https://paperwallet.fullstack.cash/' target='_blank' rel='noreferrer'>generate paper wallets here</a>.
+                any eCash or eTokens from a paper wallet to your web wallet.
+                Paper wallets are used to store eCash and tokens. You
+                can <a href='https://ecash-paperwallet.fullstack.cash/' target='_blank' rel='noreferrer'>generate paper wallets here</a>.
               </p>
               <p>
                 Paste the private key of a paper wallet below and click the button
