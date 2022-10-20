@@ -80,13 +80,12 @@ class SignMessage extends React.Component {
 
       const ecPair = bchjs.ECPair.fromWIF(wif)
       const bchAddr = bchjs.ECPair.toCashAddress(ecPair)
-      const slpAddr = bchjs.SLP.Address.toSLPAddress(bchAddr)
+      const eCashAddr = bchjs.Address.toEcashAddress(bchAddr)
 
       const output = (
         <>
           <p><b>Signature:</b> {sig}</p>
-          <p><b>BCH Address:</b> {bchAddr}</p>
-          <p><b>SLP Address:</b> {slpAddr}</p>
+          <p><b>eCash Address:</b> {eCashAddr}</p>
         </>
       )
 
