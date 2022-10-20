@@ -8,7 +8,7 @@ import React from 'react'
 import { Container, Row, Col, Form, Button, Modal, Spinner } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons'
-import Sweep from 'bch-token-sweep'
+import Sweep from 'xec-token-sweep'
 
 // let _this
 
@@ -149,10 +149,7 @@ class SweepWif extends React.Component {
               Transaction ID: {txid}
             </p>
             <p>
-              <a href={`https://blockchair.com/bitcoin-cash/transaction/${txid}`} target='_blank' rel='noreferrer'>TX on Blockchair BCH Block Explorer</a>
-            </p>
-            <p>
-              <a href={`https://token.fullstack.cash/transactions/?txid=${txid}`} target='_blank' rel='noreferrer'>TX on token explorer</a>
+              <a href={`https://explorer.be.cash/tx/${txid}`} target='_blank' rel='noreferrer'>TX on Blockchair BCH Block Explorer</a>
             </p>
           </>
         )
