@@ -113,15 +113,15 @@ class App extends React.Component {
       })
 
       // Get the BCH balance of the wallet.
-      this.addToModal('Getting BCH balance')
+      this.addToModal('Getting eCash balance')
       await this.asyncLoad.getWalletBchBalance(bchWallet, this.updateBchWalletState)
 
       // Get the SLP tokens held by the wallet.
-      this.addToModal('Getting SLP tokens')
+      this.addToModal('Getting eTokens')
       await this.asyncLoad.getSlpTokenBalances(bchWallet, this.updateBchWalletState)
 
       // Get the SLP tokens held by the wallet.
-      this.addToModal('Getting BCH spot price in USD')
+      this.addToModal('Getting eCash spot price in USD')
       await this.asyncLoad.getUSDExchangeRate(bchWallet, this.updateBchWalletState)
 
       // Close the modal once initialization is done.

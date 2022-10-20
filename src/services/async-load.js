@@ -52,8 +52,8 @@ class AsyncLoad {
     await wallet.walletInfoPromise
     await wallet.initialize()
 
-    console.log(`Wallet Info: ${JSON.stringify(wallet.walletInfo, null, 2)}`)
-    console.log(`Wallet UTXOs: ${JSON.stringify(wallet.utxos.utxoStore, null, 2)}`)
+    // console.log(`Wallet Info: ${JSON.stringify(wallet.walletInfo, null, 2)}`)
+    // console.log(`Wallet UTXOs: ${JSON.stringify(wallet.utxos.utxoStore, null, 2)}`)
 
     // Update the state of the wallet.
     updateBchWalletState(wallet.walletInfo)
