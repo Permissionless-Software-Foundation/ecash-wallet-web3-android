@@ -23,7 +23,7 @@ let serverUrl = 'http://wa-usa-xec-consumer.fullstackcash.nl'
 
 // Default alternative servers.
 const defaultServerOptions = [
-  { value: 'http://wa-usa-xec-consumer.fullstackcash.nl', label: 'http://wa-usa-xec-consumer.fullstackcash.nl' }
+  { value: 'https://wa-usa-xec-consumer.fullstackcash.nl', label: 'https://wa-usa-xec-consumer.fullstackcash.nl' }
 ]
 
 let _this

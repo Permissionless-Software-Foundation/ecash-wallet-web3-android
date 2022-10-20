@@ -166,7 +166,7 @@ class AsyncLoad {
       console.log('Returning hard-coded list of servers.')
 
       const defaultOptions = [
-        { value: 'http://wa-usa-xec-consumer.fullstackcash.nl', label: 'http://wa-usa-xec-consumer.fullstackcash.nl' }
+        { value: 'https://wa-usa-xec-consumer.fullstackcash.nl', label: 'https://wa-usa-xec-consumer.fullstackcash.nl' }
       ]
 
       return defaultOptions
