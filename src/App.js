@@ -19,10 +19,11 @@ import LoadLocalStorage from './components/load-localstorage'
 
 // Default restURL for a back-end server.
 // let serverUrl = 'https://free-bch.fullstack.cash'
-let serverUrl = 'https://wa-usa-xec-consumer.fullstackcash.nl'
+let serverUrl = 'https://xec-consumer-or1-usa.fullstackcash.nl'
 
 // Default alternative servers.
 const defaultServerOptions = [
+  { value: 'https://xec-consumer-or1-usa.fullstackcash.nl', label: 'https://xec-consumer-or1-usa.fullstackcash.nl' },
   { value: 'https://wa-usa-xec-consumer.fullstackcash.nl', label: 'https://wa-usa-xec-consumer.fullstackcash.nl' }
 ]
 
