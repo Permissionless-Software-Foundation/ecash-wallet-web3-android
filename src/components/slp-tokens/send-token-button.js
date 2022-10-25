@@ -21,6 +21,7 @@ class SentTokenButton extends React.Component {
     this.state = {
       token: props.token,
       appData: props.appData,
+      showAddrWarning: false,
 
       // Function from parent View component. Called after sending tokens,
       // to trigger a refresh of the wallet token balances.
@@ -39,7 +40,8 @@ class SentTokenButton extends React.Component {
       dialogFinished: true
     }
 
-    // _this = this
+    // Bind 'this' object to subfunctions.
+    this.handleUpdateSendToAddr = this.handleUpdateSendToAddr.bind(this)
   }
 
   render () {
@@ -122,7 +124,7 @@ class SentTokenButton extends React.Component {
                     <Form.Control
                       type='text'
                       placeholder='etoken:qz8zzt9pp95pzsgqtstq0dsvmnssdydjy5mvzyjjln'
-                      onChange={e => this.setState({ sendToAddress: e.target.value })}
+                      onChange={this.handleUpdateSendToAddr}
                       value={this.state.sendToAddress}
                     />
                   </Form.Group>
@@ -171,6 +173,27 @@ class SentTokenButton extends React.Component {
             </Row>
             <br />
 
+            {
+              this.state.showAddrWarning
+                ? (
+                  <>
+                    <Row>
+                      <Col style={{ textAlign: 'center' }}>
+                        <p style={{ color: 'orange' }}>
+                          <b>Warning</b>: Careful! Not all eCash wallets are token-aware.
+                          If you send this token to a wallet that is not
+                          token-aware, it could be burned. It's best practice to
+                          only send tokens to 'etoken:' addresses and not
+                          'ecash:' addresses.
+                        </p>
+                      </Col>
+                    </Row>
+                    <br />
+                  </>
+                  )
+                : null
+            }
+
             <Row>
               <Col xs={10}>
                 {this.state.statusMsg}
@@ -186,6 +209,19 @@ class SentTokenButton extends React.Component {
         <Modal.Footer />
       </Modal>
     )
+  }
+
+  handleUpdateSendToAddr (event) {
+    // onChange={e => this.setState({ sendToAddress: e.target.value })}
+    const value = event.target.value
+
+    this.setState({ sendToAddress: value })
+
+    if (value.includes('ecash')) {
+      this.setState({ showAddrWarning: true })
+    } else {
+      this.setState({ showAddrWarning: false })
+    }
   }
 
   // This handler is called when the user clicks on the paste-icon favicon,
@@ -227,7 +263,8 @@ class SentTokenButton extends React.Component {
       instance.setState({
         statusMsg: 'Preparing to send tokens...',
         hideSpinner: false,
-        dialogFinished: false
+        dialogFinished: false,
+        showAddrWarning: false
       })
 
       // Validate the quantity
