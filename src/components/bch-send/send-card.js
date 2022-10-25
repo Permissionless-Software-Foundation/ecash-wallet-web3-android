@@ -63,7 +63,7 @@ class SendCard extends React.Component {
           this.state.hideModal
             ? null
             : (<ModalTemplate
-                heading='Sending BCH'
+                heading='Sending eCash'
                 body={this.state.modalBody}
                 hideSpinner={this.state.hideModalSpinner}
                 closeFunc={this.onModalClose}
@@ -82,7 +82,7 @@ class SendCard extends React.Component {
             <Container>
               <Row>
                 <Col style={{ textAlign: 'center' }}>
-                  <b>BCH Address:</b>
+                  <b>eCash Address:</b>
                 </Col>
               </Row>
 
